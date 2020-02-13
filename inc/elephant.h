@@ -14,6 +14,7 @@ class Elephant : public Pachyderm {
 public:
     Elephant(const std::string& name);
 
+    /// Elephant 'trumpets' as opposed to 'rumbles' (in Project 1)
     virtual void MakeNoise() const override;
 };
 

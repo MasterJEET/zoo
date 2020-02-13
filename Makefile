@@ -5,6 +5,7 @@ CPPFLAGS += -I$(INC_DIR)
 CXXFLAGS += -std=c++11
 
 OBJS += zoo.o zookeeper.o wolf.o cat.o dog.o elephant.o hippo.o lion.o rhino.o tiger.o pachyderm.o feline.o canine.o animal.o
+OBJS += walk.o sprint.o run.o
 
 all	: zoo
 

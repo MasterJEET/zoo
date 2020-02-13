@@ -13,8 +13,6 @@
 class Pachyderm : public Animal {
 public:
     Pachyderm(const std::string& name, const std::string& type);
-
-    virtual void Roam() const override;
 };
 
 #endif

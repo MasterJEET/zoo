@@ -76,6 +76,7 @@ void Zookeeper::ExerciseAnimals(const std::list<Animal::Ptr>& animals) const
 void Zookeeper::ShutDownZoo(const std::list<Animal::Ptr>& animals) const
 {
     std::cout << "Shutting down the zoo" << std::endl;
+    std::cout << "---------------------------" << std::endl;
 
     for(const auto& animal: animals)
     {

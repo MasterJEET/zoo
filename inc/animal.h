@@ -9,17 +9,21 @@
 #include <string>
 #include <memory>
 
+#include "roam.h"
+
 class Animal{
+private:
+    /// std::shared_ptr to a RoamBehaviour object to be set dynamically
+    RoamBehaviour::Ptr roam_style_;
 
 protected:
     /// Name of the animal that begins with the first letter of its species
     const std::string name_;
 
-    /// TODO verify!: Which species the animal belong to
+    /// Which species the animal belong to
     const std::string type_;
 
 public:
-
     using Ptr = std::shared_ptr<Animal>;
 
     Animal(const std::string& name, const std::string& type);
@@ -27,12 +31,16 @@ public:
     virtual void WakeUp() const;
     virtual void Eat() const;
     virtual void Sleep() const;
+    
+    virtual void SetRoamBehaviour(RoamBehaviour::Ptr roam_style){roam_style_ = roam_style;}
 
-    // Making the below methods pure virtual because the child classes have to implement this
-    // method for their instantiation. This is because making noise and roaming are
-    // specific to each animal type.
+    /// Following function was virtual as per Project1 to enable inheritance,
+    /// now they are ordinary function hence we are bound to use 'Strategy pettern'
+    /// to implement Roam behaviours
+    void Roam() const;
+
+    //TODO: Implement similar to Roam behaviour
     virtual void MakeNoise() const = 0;
-    virtual void Roam() const = 0;
 };
 
 #endif

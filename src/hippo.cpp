@@ -10,6 +10,6 @@ void Hippo::MakeNoise() const
 {
     std::cout << "Name: " << name_ << std::endl;
     std::cout << "Type: " << type_ << std::endl;
-    std::cout << name_ << " growls" << std::endl;
+    std::cout << name_ << " grunts" << std::endl;
     std::cout << std::endl;
 }

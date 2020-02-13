@@ -17,6 +17,7 @@ private:
 public:
     Cat(const std::string& name);
 
+    /// Cat 'meows'
     virtual void MakeNoise() const override;
     virtual void Sleep() const override;
 };

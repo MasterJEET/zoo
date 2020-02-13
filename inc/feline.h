@@ -13,8 +13,6 @@
 class Feline : public Animal {
 public:
     Feline(const std::string& name, const std::string& type);
-
-    virtual void Roam() const override;
 };
 
 #endif

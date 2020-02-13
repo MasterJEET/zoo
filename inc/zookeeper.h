@@ -24,8 +24,7 @@ public:
 
     Zookeeper& operator=(Zookeeper zookeeper);
 
-    std::string GetName(){return name_;}
-    void SetName(const std::string& name){name_ = name;}
+    std::string GetName() const{return name_;}
 
     /// This method uses other utility functions to execute the daily responsibilities
     /// of the zookeeper.

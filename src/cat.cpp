@@ -12,7 +12,7 @@ void Cat::MakeNoise() const
 {
     std::cout << "Name: " << name_ << std::endl;
     std::cout << "Type: " << type_ << std::endl;
-    std::cout << name_ << " says meow" << std::endl;
+    std::cout << name_ << " meows" << std::endl;
     std::cout << std::endl;
 }
 
