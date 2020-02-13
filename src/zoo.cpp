@@ -2,14 +2,14 @@
 
 #include <iostream>
 
-#include "lion.h"
-#include "hippo.h"
-#include "dog.h"
-#include "cat.h"
-#include "elephant.h"
-#include "wolf.h"
-#include "tiger.h"
-#include "rhino.h"
+#include "animalspecies/lion.h"
+#include "animalspecies/hippo.h"
+#include "animalspecies/dog.h"
+#include "animalspecies/cat.h"
+#include "animalspecies/elephant.h"
+#include "animalspecies/wolf.h"
+#include "animalspecies/tiger.h"
+#include "animalspecies/rhino.h"
 
 void Zoo::PutAnimals(const std::list<std::string>& animal_names, const std::list<std::string>& animal_species)
 {

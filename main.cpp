@@ -1,7 +1,3 @@
-#include <wolf.h>
-
-#include <iostream>
-
 #include "zoo.h"
 
 int main()
