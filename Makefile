@@ -1,7 +1,7 @@
 CPPFLAGS += -I./inc -I./inc/animals
-CXXFLAGS += -std=c++11
+CXXFLAGS += -g -Wall -Wextra -std=c++11
 
-OBJS += zoo.o zookeeper.o wolf.o cat.o dog.o elephant.o hippo.o lion.o rhino.o tiger.o animal.o
+OBJS += zoo.o observable.o zookeeper.o zooannouncer.o wolf.o cat.o dog.o elephant.o hippo.o lion.o rhino.o tiger.o animal.o
 
 all	: zoo
 

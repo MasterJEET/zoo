@@ -1,3 +1,4 @@
+ZooAnnouncer: ZooKeeper will wake animals
 Waking up animals
 ---------------------------
 Name: Chloe
@@ -58,6 +59,7 @@ Wade wakes up
 
 
 
+ZooAnnouncer: ZooKeeper will take a roll call
 Roll calling animals
 ---------------------------
 Name: Chloe
@@ -118,6 +120,7 @@ Wade howls
 
 
 
+ZooAnnouncer: ZooKeeper will feed the animals
 Feeding the animals
 ---------------------------
 Name: Chloe
@@ -178,6 +181,7 @@ Wade eats
 
 
 
+ZooAnnouncer: ZooKeeper will make animals exercise
 Exercising the animals
 ---------------------------
 Name: Chloe
@@ -238,15 +242,16 @@ Wade runs
 
 
 
+ZooAnnouncer: ZooKeeper will shut down the zoo
 Shutting down the zoo
 ---------------------------
 Name: Chloe
 Type: Cat
-Chloe sprints
+Chloe wakes up
 
 Name: Charlie
 Type: Cat
-Charlie sprints
+Charlie wakes up
 
 Name: Dexter
 Type: Dog
