@@ -13,9 +13,6 @@
 class Dog : public Canine {
 public:
     Dog(const std::string& name);
-
-    /// Dog 'barks'
-    virtual void MakeNoise() const override;
 };
 
 #endif

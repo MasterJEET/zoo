@@ -1,19 +1,16 @@
-#include <cat.h>
+#include "cat.h"
 
-#include <iostream>
 #include <cstdlib>
 #include <ctime>
 
+#include "meow.h"
+
 Cat::Cat(const std::string& name):
     Feline(name, "Cat")
-{}
-
-void Cat::MakeNoise() const
 {
-    std::cout << "Name: " << name_ << std::endl;
-    std::cout << "Type: " << type_ << std::endl;
-    std::cout << name_ << " meows" << std::endl;
-    std::cout << std::endl;
+    /// Cat 'meows'
+    auto noise_style = std::make_shared<Meow>();
+    SetNoiseBehaviour(noise_style);
 }
 
 /// Cat behaves randomly when asked to sleep

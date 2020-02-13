@@ -1,15 +1,11 @@
-#include <dog.h>
+#include "dog.h"
 
-#include <iostream>
+#include "bark.h"
 
 Dog::Dog(const std::string& name):
     Canine(name, "Dog")
-{}
-
-void Dog::MakeNoise() const
 {
-    std::cout << "Name: " << name_ << std::endl;
-    std::cout << "Type: " << type_ << std::endl;
-    std::cout << name_ << " barks" << std::endl;
-    std::cout << std::endl;
+    /// Dog 'barks'
+    auto noise_style = std::make_shared<Bark>();
+    SetNoiseBehaviour(noise_style);
 }

@@ -13,9 +13,6 @@
 class Lion : public Feline {
 public:
     Lion(const std::string& name);
-
-    /// Lion 'roars'
-    virtual void MakeNoise() const override;
 };
 
 #endif

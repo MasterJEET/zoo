@@ -13,9 +13,6 @@
 class Rhino : public Pachyderm {
 public:
     Rhino(const std::string& name);
-
-    /// Rhino 'growls'
-    virtual void MakeNoise() const override;
 };
 
 #endif

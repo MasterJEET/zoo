@@ -1,15 +1,11 @@
-#include <rhino.h>
+#include "rhino.h"
 
-#include <iostream>
+#include "growl.h"
 
 Rhino::Rhino(const std::string& name):
     Pachyderm(name, "Rhino")
-{}
-
-void Rhino::MakeNoise() const
 {
-    std::cout << "Name: " << name_ << std::endl;
-    std::cout << "Type: " << type_ << std::endl;
-    std::cout << name_ << " growls" << std::endl;
-    std::cout << std::endl;
+    /// Rhino 'growls'
+    auto noise_style = std::make_shared<Growl>();
+    SetNoiseBehaviour(noise_style);
 }

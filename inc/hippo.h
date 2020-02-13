@@ -13,9 +13,6 @@
 class Hippo : public Pachyderm {
 public:
     Hippo(const std::string& name);
-
-    /// Hippo 'grunts' as opposed to 'growls' (in Project 1)
-    virtual void MakeNoise() const override;
 };
 
 #endif

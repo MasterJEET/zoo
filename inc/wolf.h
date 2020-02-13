@@ -6,14 +6,11 @@
 #ifndef WOLF_H
 #define WOLF_H
 
-#include <canine.h>
+#include "canine.h"
 
 class Wolf : public Canine {
 public:
     Wolf(const std::string& name);
-
-    /// Wolf 'howls'
-    virtual void MakeNoise() const override;
 };
 
 #endif

@@ -10,7 +10,7 @@
 
 class Sprint : public RoamBehaviour {
 public:
-    virtual std::string Roam() const override;
+    std::string Roam() const override;
 };
 
 #endif

@@ -1,15 +1,12 @@
-#include <tiger.h>
+#include "tiger.h"
 
-#include <iostream>
+#include "snarl.h"
 
 Tiger::Tiger(const std::string& name):
     Feline(name, "Tiger")
-{}
-
-void Tiger::MakeNoise() const
 {
-    std::cout << "Name: " << name_ << std::endl;
-    std::cout << "Type: " << type_ << std::endl;
-    std::cout << name_ << " snarls" << std::endl;
-    std::cout << std::endl;
+    /// Tiger does 'roar' but to differentiate it from 'a lion's roar'
+    /// we make it 'snarl'
+    auto noise_style = std::make_shared<Snarl>();
+    SetNoiseBehaviour(noise_style);
 }

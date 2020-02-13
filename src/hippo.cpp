@@ -1,15 +1,11 @@
-#include <hippo.h>
+#include "hippo.h"
 
-#include <iostream>
+#include "grunt.h"
 
 Hippo::Hippo(const std::string& name):
     Pachyderm(name, "Hippo")
-{}
-
-void Hippo::MakeNoise() const
 {
-    std::cout << "Name: " << name_ << std::endl;
-    std::cout << "Type: " << type_ << std::endl;
-    std::cout << name_ << " grunts" << std::endl;
-    std::cout << std::endl;
+    /// Hippo 'grunts' as opposed to 'growls' (in Project 1)
+    auto noise_style = std::make_shared<Grunt>();
+    SetNoiseBehaviour(noise_style);
 }
