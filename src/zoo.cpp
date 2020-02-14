@@ -58,5 +58,5 @@ void Zoo::PutAnimals(const std::list<std::string>& animal_names, const std::list
 
 void Zoo::Start()
 {
-    zookeeper_.ExecuteResponsibilities(animals_);
+    p_zookeeper_->ExecuteResponsibilities(animals_);
 }

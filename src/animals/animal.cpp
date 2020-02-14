@@ -4,10 +4,10 @@
 #include <string>
 
 Animal::Animal(const std::string& name, const std::string& type):
-    name_(name),
-    type_(type),
     roam_style_(nullptr),
-    noise_style_(nullptr)
+    noise_style_(nullptr),
+    name_(name),
+    type_(type)
 {
 }
 

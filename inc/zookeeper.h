@@ -6,12 +6,13 @@
 #ifndef ZOOKEEPER_H
 #define ZOOKEEPER_H
 
-#include <animal.h>
-
 #include <string>
 #include <list>
 
-class Zookeeper {
+#include "animal.h"
+#include "observable.h"
+
+class Zookeeper : public Observable {
 
 private:
     std::string name_;
