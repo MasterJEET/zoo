@@ -11,6 +11,14 @@ Zookeeper& Zookeeper::operator=(Zookeeper zookeeper)
     return *this;
 }
 
+void Zookeeper::NotifyObservers(const std::shared_ptr<Data>& p_data) const
+{
+    for(const auto& o: observers_)
+    {
+        o->Update(p_data);
+    }
+}
+
 void Zookeeper::ExecuteResponsibilities(const std::list<Animal::Ptr>& animals) const
 {
     WakeAnimals(animals);

@@ -17,6 +17,12 @@ private:
 public:
     Cat(const std::string& name);
 
+    /*! Sleep method calling which Cat will behave randomly
+     *
+     * This random behaviour of Cat was requird in Project 1 and
+     * has been kept as such for consistency. Also there was no 
+     * mention in Project 2 about changing this
+     * */
     virtual void Sleep() const override;
 };
 

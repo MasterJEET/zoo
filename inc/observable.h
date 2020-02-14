@@ -15,15 +15,10 @@
 class Observer;
 
 class Observable {
-protected:
-    std::list<std::shared_ptr<Observer>> observers_;
-
 public:
-    using Ptr = std::shared_ptr<Observable>;
-
-    virtual void RegisterObserver(std::shared_ptr<Observer> ptr){observers_.push_back(ptr);}
-    virtual void RemoveObserver(std::shared_ptr<Observer> ptr){observers_.remove(ptr);}
-    virtual void NotifyObservers(const std::shared_ptr<Data>& p_data) const;
+    virtual void RegisterObserver(std::shared_ptr<Observer> ptr) = 0;
+    virtual void RemoveObserver(std::shared_ptr<Observer> ptr) = 0;
+    virtual void NotifyObservers(const std::shared_ptr<Data>& p_data) const = 0;
 };
 
 #endif

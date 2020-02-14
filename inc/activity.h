@@ -15,6 +15,11 @@ enum class ActivityType : short {
     ShutDown
 };
 
+/*! Holds the activity type
+ *
+ * This class is used to pass information activity type to
+ * ZooAnnouncer and Zookeeper
+ * */
 class Activity : public Data {
 public:
     ActivityType activity_type;

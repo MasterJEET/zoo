@@ -4,8 +4,8 @@
 #include <string>
 
 Animal::Animal(const std::string& name, const std::string& type):
-    roam_style_(nullptr),
-    noise_style_(nullptr),
+    roam_behaviour_(nullptr),
+    noise_behaviour_(nullptr),
     name_(name),
     type_(type)
 {
@@ -41,10 +41,10 @@ void Animal::Roam() const
     std::cout << "Type: " << type_ << std::endl;
     std::cout << name_;
 
-    if (roam_style_ == nullptr)
+    if (roam_behaviour_ == nullptr)
         std::cout << " roam behaviour not set" << std::endl;
     else
-        std::cout << " " << roam_style_->Roam() << std::endl;
+        std::cout << " " << roam_behaviour_->Roam() << std::endl;
 
     std::cout << std::endl;
 }
@@ -55,10 +55,10 @@ void Animal::MakeNoise() const
     std::cout << "Type: " << type_ << std::endl;
     std::cout << name_;
 
-    if (noise_style_ == nullptr)
+    if (noise_behaviour_ == nullptr)
         std::cout << " noise behaviour not set" << std::endl;
     else
-        std::cout << " " << noise_style_->MakeNoise() << std::endl;
+        std::cout << " " << noise_behaviour_->MakeNoise() << std::endl;
 
     std::cout << std::endl;
 }

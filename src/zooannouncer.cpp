@@ -4,6 +4,15 @@
 
 #include "activity.h"
 
+std::shared_ptr<ZooAnnouncer> ZooAnnouncer::Create(
+        const std::string& name,
+        std::shared_ptr<Observable> p_zookeeper
+        ){
+    auto p_announcer = std::shared_ptr<ZooAnnouncer>(new ZooAnnouncer(name, p_zookeeper));
+    p_zookeeper->RegisterObserver(p_announcer);
+    return p_announcer;
+}
+
 void ZooAnnouncer::Update(const std::shared_ptr<Data>& p_data) const
 {
     auto p_act = std::dynamic_pointer_cast<Activity>(p_data);

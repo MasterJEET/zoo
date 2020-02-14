@@ -15,10 +15,10 @@
 class Animal{
 private:
     /// std::shared_ptr to a RoamBehaviour which can be set dynamically
-    RoamBehaviour::Ptr roam_style_;
+    RoamBehaviour::Ptr roam_behaviour_;
 
     /// std::shared_ptr to a NoiseBehaviour which can be set dynamically
-    NoiseBehaviour::Ptr noise_style_;
+    NoiseBehaviour::Ptr noise_behaviour_;
 
 protected:
     /// Name of the animal that begins with the first letter of its species
@@ -36,8 +36,8 @@ public:
     virtual void Eat() const;
     virtual void Sleep() const;
     
-    virtual void SetRoamBehaviour(RoamBehaviour::Ptr roam_style){roam_style_ = roam_style;}
-    virtual void SetNoiseBehaviour(NoiseBehaviour::Ptr noise_style){noise_style_ = noise_style;}
+    virtual void SetRoamBehaviour(RoamBehaviour::Ptr roam_style){roam_behaviour_ = roam_style;}
+    virtual void SetNoiseBehaviour(NoiseBehaviour::Ptr noise_style){noise_behaviour_ = noise_style;}
 
     /// Following function was virtual as per Project1 to enable inheritance,
     /// now they are ordinary function hence we are bound to use 'Strategy pettern'
