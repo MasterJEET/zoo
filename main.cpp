@@ -1,14 +1,14 @@
-#include <wolf.h>
-
 #include <iostream>
 
 #include "zoo.h"
+#include "zooannouncer.h"
 
 int main()
 {
 
-    Zookeeper zookeeper("John");
-    Zoo zoo(zookeeper);
+    auto p_zookeeper = std::make_shared<Zookeeper>("John");
+    auto p_announcer = ZooAnnouncer::Create("Jane", p_zookeeper);
+    Zoo zoo(p_zookeeper, p_announcer);
 
     std::list<std::string> animal_names = {"Chloe", "Charlie", "Dexter", "Dan", "Leo",
         "Lucy", "Harry", "Howard", "Edward", "Eddy", "Rad", "Ruby", "Will", "Wade"};

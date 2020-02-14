@@ -1,11 +1,22 @@
-#include <zookeeper.h>
+#include "zookeeper.h"
 
 #include <iostream>
+#include <memory>
+
+#include "activity.h"
 
 Zookeeper& Zookeeper::operator=(Zookeeper zookeeper)
 {
     std::swap(name_, zookeeper.name_);
     return *this;
+}
+
+void Zookeeper::NotifyObservers(const std::shared_ptr<Data>& p_data) const
+{
+    for(const auto& o: observers_)
+    {
+        o->Update(p_data);
+    }
 }
 
 void Zookeeper::ExecuteResponsibilities(const std::list<Animal::Ptr>& animals) const
@@ -19,6 +30,9 @@ void Zookeeper::ExecuteResponsibilities(const std::list<Animal::Ptr>& animals) c
 
 void Zookeeper::WakeAnimals(const std::list<Animal::Ptr>& animals) const
 {
+    auto p_act = std::make_shared<Activity>(ActivityType::Wake);
+    NotifyObservers(p_act);
+
     std::cout << "Waking up animals" << std::endl;
     std::cout << "---------------------------" << std::endl;
 
@@ -33,6 +47,9 @@ void Zookeeper::WakeAnimals(const std::list<Animal::Ptr>& animals) const
 
 void Zookeeper::RollCall(const std::list<Animal::Ptr>& animals) const
 {
+    auto p_act = std::make_shared<Activity>(ActivityType::RollCall);
+    NotifyObservers(p_act);
+
     std::cout << "Roll calling animals" << std::endl;
     std::cout << "---------------------------" << std::endl;
 
@@ -47,6 +64,9 @@ void Zookeeper::RollCall(const std::list<Animal::Ptr>& animals) const
 
 void Zookeeper::FeedAnimals(const std::list<Animal::Ptr>& animals) const
 {
+    auto p_act = std::make_shared<Activity>(ActivityType::Feed);
+    NotifyObservers(p_act);
+
     std::cout << "Feeding the animals" << std::endl;
     std::cout << "---------------------------" << std::endl;
 
@@ -61,6 +81,9 @@ void Zookeeper::FeedAnimals(const std::list<Animal::Ptr>& animals) const
 
 void Zookeeper::ExerciseAnimals(const std::list<Animal::Ptr>& animals) const
 {
+    auto p_act = std::make_shared<Activity>(ActivityType::Exercise);
+    NotifyObservers(p_act);
+
     std::cout << "Exercising the animals" << std::endl;
     std::cout << "---------------------------" << std::endl;
 
@@ -75,7 +98,11 @@ void Zookeeper::ExerciseAnimals(const std::list<Animal::Ptr>& animals) const
 
 void Zookeeper::ShutDownZoo(const std::list<Animal::Ptr>& animals) const
 {
+    auto p_act = std::make_shared<Activity>(ActivityType::ShutDown);
+    NotifyObservers(p_act);
+
     std::cout << "Shutting down the zoo" << std::endl;
+    std::cout << "---------------------------" << std::endl;
 
     for(const auto& animal: animals)
     {
